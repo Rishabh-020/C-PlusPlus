@@ -40,13 +40,21 @@ struct student{
 //     }
 // }
 int digitRightShift(string str,int *num1,int *num2){
-   
+   *num1=0,*num2=0;
+    for(int i=0;i<str.length();i++){
+        if(str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'|| str[i]=='U'||
+        str[i]=='a'||str[i]=='e'||str[i]=='i'|| str[i]=='o'||str[i]=='u'){
+            (*num1)++;
+        }else{
+            (*num2)++;
+        }
+    }
 }
 int main(){
     int vowel,conconent;
     string str;
     getline(cin,str);
     int shiftedNumber = digitRightShift (str,&vowel,&conconent) ;
-    cout<<shiftedNumber ;
+    cout<<vowel<<" "<<conconent;
     return 0;
 }
