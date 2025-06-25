@@ -40,7 +40,7 @@ struct student{
 //     }
 // }
 int digitRightShift(string str,int *num1,int *num2){
-    
+    hebj
 }
 int main(){
     int vowel,conconent;
