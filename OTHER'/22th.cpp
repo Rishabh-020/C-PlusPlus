@@ -39,22 +39,39 @@ struct student{
 //         }count=0;
 //     }
 // }
-int digitRightShift(string str,int *num1,int *num2){
-   *num1=0,*num2=0;
-    for(int i=0;i<str.length();i++){
-        if(str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'|| str[i]=='U'||
-        str[i]=='a'||str[i]=='e'||str[i]=='i'|| str[i]=='o'||str[i]=='u'){
-            (*num1)++;
-        }else{
-            (*num2)++;
-        }
-    }
-}
+
+
+// int digitRightShift(string str,int *num1,int *num2){
+//    *num1=0,*num2=0;
+//     for(int i=0;i<str.length();i++){
+//         if(str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'|| str[i]=='U'||
+//         str[i]=='a'||str[i]=='e'||str[i]=='i'|| str[i]=='o'||str[i]=='u'){
+//             (*num1)++;
+//         }else{
+//             (*num2)++;
+//         }
+//     }
+// }
+// int main(){
+//     int vowel,conconent;
+//     string str;
+//     getline(cin,str);
+//     int shiftedNumber = digitRightShift (str,&vowel,&conconent) ;
+//     cout<<vowel<<" "<<conconent;
+//     return 0;
+// }
+
+
 int main(){
-    int vowel,conconent;
     string str;
+    int space=0,count=0;
     getline(cin,str);
-    int shiftedNumber = digitRightShift (str,&vowel,&conconent) ;
-    cout<<vowel<<" "<<conconent;
-    return 0;
+    for(int i=0;i<str.length();i++){
+        if(str[i]==' '|| str[i]=='\0'){
+            space=0;
+        }else if(space==0){
+            space=1;
+            count++;
+        }
+    }cout<<count;
 }
