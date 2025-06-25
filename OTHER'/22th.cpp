@@ -39,3 +39,14 @@ struct student{
 //         }count=0;
 //     }
 // }
+int digitRightShift(string str,int *num1,int *num2){
+    
+}
+int main(){
+    int vowel,conconent;
+    string str;
+    getline(cin,str);
+    int shiftedNumber = digitRightShift (str,&vowel,&conconent) ;
+    cout<<shiftedNumber ;
+    return 0;
+}
