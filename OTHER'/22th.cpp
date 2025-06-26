@@ -74,4 +74,4 @@ int main(){
             count++;
         }
     }cout<<count;
-}
+}   
