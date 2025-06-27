@@ -2,22 +2,23 @@ import java.util.Arrays;
 import java.util.Scanner;
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int len1=nums1.length,len2=nums2.length,j=0;
+        int len1=nums1.length,len2=nums2.length;
         int[]  merge =new int[len1+len2];
-        for(int i=0;i<len1/2;i++){
+        for(int i=0;i<len1;i++){
             merge[i]=nums1[i];
-            merge[len1-i-1]=nums1[len1-i-1];
         }
-        for(int i=0;i<len2/2;i++){
-            merge[i+len1]=nums1[i];
-            merge[len2-i-1+len1]=nums1[len2-i-1];
+        for(int i=0;i<len2;i++){
+            merge[i+len1]=nums2[i];
         }
         int len=merge.length;
         Arrays.sort(merge);
+        for(int i=0;i<len;i++){
+            System.out.println(merge[i]);
+        }
         if(merge.length %2==1){
             return (merge[len/2]);
         }
-        return (merge[len/2]+merge[(len/2)+1])/2.0;
+        return (merge[len/2]+merge[(len/2)-1])/2.0;
     }
 }
 public  class one{
