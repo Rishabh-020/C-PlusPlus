@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 int countDigit(int num){
     int count=0;
@@ -41,7 +42,10 @@ int pascalTriangle(int num){
 int main(){
     int num1,num2;
     cin>>num1;
-    pascalTriangle(num1);
+    int arr[]={76,877};
+    // int new_arr[num1]=arr;
+    // vector<int>vec;
+    // pascalTriangle(num1);
     // for(int i=1;i<=num1;i++){
     //     for(int j=1;j<=num1;j++){
     //         if(i==j||(i+j-1)==num1){
