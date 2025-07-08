@@ -16,10 +16,18 @@ int main(){
     cin>>num;
     // power p;
     // cout<<p.isPower(num);
-    switch(num){
-        int hundred=num%100;
-        int fifty=(num-(hundred*100))%50;
-        int twenty= (num-)
+    int hundred=0,fifty=0,twenty=0;
+    switch(1){
+        case 1:
+        hundred=num/100;
+        num=num-(hundred*100);
+        case 2:
+        fifty=num/50;
+        num=num-(fifty*50);
+        case 3:
+        twenty=num/20;
+        num=num-(twenty*20);
     }
+    cout<<hundred<<' '<<fifty<<" "<<twenty<<" "<<num;
     return 0;
 }
