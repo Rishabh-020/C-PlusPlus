@@ -1,12 +1,21 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 using namespace std;
-int main(){
+int main() {
     string str;
     getline(cin,str);
-    string ch;
-    cin>>ch;
-    int len1=str.length(),len2=ch.length();
-    for(int i=0;i<len1;i+=len2)
+    string toReplace;getline(cin,toReplace);
+    string replaceWith;getline(cin,replaceWith);
+    string result = "";
+    for (size_t i = 0; i < str.length(); ) {
+        if (str.substr(i, toReplace.length()) == toReplace) {
+            result += replaceWith;
+            i += toReplace.length();
+        } else {
+            result += str[i];
+            i++;
+        }
+    }
+    cout << result << endl;
     return 0;
 }
