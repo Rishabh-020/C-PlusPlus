@@ -22,9 +22,3 @@ public:
         cout<<endl<<"Destructed"<<endl;
     }
 };
-int main(){
-    Checking c1("hello",23,8.23);
-    Checking c2(c1);
-    c2.display();
-    return 0;
-}
