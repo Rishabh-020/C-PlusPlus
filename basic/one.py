@@ -1,9 +1,8 @@
 import random
 import json
+import os
 
 EXCUSE_HISTORY_FILE = "excuse_history.json"
-
-# Predefined excuses by category
 EXCUSES = {
     "work": [
         "I'm down with a mild fever, won't be able to attend today.",
@@ -49,13 +48,13 @@ def show_history():
             print(f"{i}. {excuse}")
 
 def simulate_emergency():
-    print("\n🚨 Simulating Emergency Alert...")
-    print("🔔 Fake emergency call scheduled to your device.")
-    print("📩 Message: 'URGENT: Please call me back immediately!'")
+    print("\n Simulating Emergency Alert...")
+    print(" Fake emergency call scheduled to your device.")
+    print(" Message: 'URGENT: Please call me back immediately!'")
 
 def main():
     while True:
-        print("\n🤖 AI Excuse Generator")
+        print("\nAI Excuse Generator")
         print("1. Generate Excuse")
         print("2. View Excuse History")
         print("3. Simulate Emergency Message")
@@ -77,7 +76,7 @@ def main():
         elif choice == "3":
             simulate_emergency()
         elif choice == "4":
-            print("Exiting... Stay Excused 😎")
+            print("Exiting... Stay Excused")
             break
         else:
             print("Invalid input. Try again.")
