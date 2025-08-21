@@ -26,8 +26,9 @@ public:
     void display(){
         cout<<"Name: "<<accountHolder<<" AccNumber: "<<accountNumber<<" Balance: "<<balance<<endl;
     }
-    void fill(string name,int age,double sal){
-        accountHolder=name;
+    void fill(string accountHolder,int age,double sal){
+        this->accountHolder=accountHolder;
+        // accountHolder=name;
         accountNumber=age;
         balance=sal;
         totalAccount++;
