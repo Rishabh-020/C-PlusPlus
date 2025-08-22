@@ -167,10 +167,48 @@ int factNormal(int *num){
     int temp=*num-1;
     return (*num)*factNormal(&temp);
 }
+int findLen(string s){
+    int count=0;
+    for(int i=0;i<s.length();i++){
+        if(s[i]==' '){
+            count=0;
+        }else
+        count++;
+    }
+    return count;
+}
+int PalPhrase(string str){
+    string newStr="";
+    int j=0;
+     for(int i=0;i<str.length();i++){
+        if(isalpha(str[i])){
+            newStr.push_back(tolower(str[i]));
+        }else if(isdigit(str[i])){
+            newStr.push_back(str[i]);
+        }
+     }
+     int start=0,end=newStr.length()-1;
+     while(start<=end){
+        if(newStr[start]!=newStr[end]){
+            return 0;
+        }
+        start++;
+        end--;
+     }
+     return 1;
+}
 int main(){
     int num1,num2;
-    cin>>num1>>num2;
-    cout<<factNormal(num1)<<" with pointer "<<factNormal(&num1);
+    string str;
+    getline(cin,str);
+    if(PalPhrase(str)){
+        cout<<"Yes";
+    }else{
+        cout<<"No";
+    }
+    // cout<<findLen(str);
+    // cin>>num1>>num2;
+    // cout<<factNormal(num1)<<" with pointer "<<factNormal(&num1);
     // cout<<GreateFib(num1);
     // cout<<GreaterPrime(&num1);
     // swapPointer(&num1,&num2);
