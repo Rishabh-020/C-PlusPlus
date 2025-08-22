@@ -40,17 +40,6 @@ int reverseWord(string &str){
         }
     }
 }
-int isPrime(int num){
-    if(num<=2){
-        return 1;
-    }
-    for(int i=2;i<num/2;i++){
-        if(num%i==0){
-            return 0;
-        }
-    }
-    return 1;
-}
 int isPalindrome(string str){
     for(int i=0;i<str.length()/2;i++){
         if(str[i]==' '){
@@ -104,10 +93,89 @@ float calculateSalary(float *num){
     *num= (*num)+((*num)*0.2)+((*num)*0.10)-((*num)*0.05);
     return *num;
 }
+int palindromeString(string str){
+    int start=0,end=str.length()-1;
+    while(start<=end){
+        if(str[start]==' '){
+            start++;
+            continue;
+        }if(str[end]==' '){
+            end--;
+            continue;
+        }
+        if(str[start]!=str[end]){
+            return 0;
+        }
+        start++;
+        end--;
+    }
+    return 1;
+}
+int swapPointer(int *num1,int *num2){
+    int temp=*num1;
+    *num1=*num2;
+    *num2=temp;
+}
+int isPrime(int num){
+    if(num==1){
+        return 0;
+    }
+    for(int i=2;i*i<=num;i++){
+        if(num%i==0){
+            return 0;
+        }
+    }
+    return 1;
+}
+int GreaterPrime(int *num1){
+    int val=0,count=0;
+    for(int i=*num1+1;i<=100000;i++){
+        if(isPrime(i)){
+            val=i;
+            break;
+        }
+    }
+    while(val>0){
+        int n=val%10;
+        count+=n;
+        val/=10;
+    }
+    return count;
+}
+int isFib(int num){
+    if(num==0){
+        return 0;
+    }
+    if(num=1){
+        return 1;
+    }
+    return isFib(num-1)+isFib(num-2);
+}
+int GreateFib(int num){
+    for(int i=num+1;;i++){
+        if(isFib(i)){
+            return i;
+        }
+    }
+}
+int factNormal(int num){
+    if(num<=0)return 1;
+    else return num*factNormal(num-1);
+}
+int factNormal(int *num){
+    if(*num<=0)return 1;
+    int temp=*num-1;
+    return (*num)*factNormal(&temp);
+}
 int main(){
-    int num1;
-    cin>>num1;
-    cout<<reverseEachByPlus(num1);
+    int num1,num2;
+    cin>>num1>>num2;
+    cout<<factNormal(num1)<<" with pointer "<<factNormal(&num1);
+    // cout<<GreateFib(num1);
+    // cout<<GreaterPrime(&num1);
+    // swapPointer(&num1,&num2);
+    // cout<<num1<<" "<<num2;
+    // cout<<reverseEachByPlus(num1);
     // cout<<reverseEachByMinus(num1);
     // float num;
     // cin>>num;
@@ -117,6 +185,11 @@ int main(){
 //  cout << fixed << setprecision(2) << num;
     // string str;
     // getline(cin,str);
+    // if(palindromeString(str)){
+    //     cout<<"Yes";
+    // }else{
+    //     cout<<"No";
+    // }
     // if(isPalindrome(str)){
     //     cout<<"Pal";
     // }   
