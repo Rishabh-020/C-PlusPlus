@@ -197,15 +197,54 @@ int PalPhrase(string str){
      }
      return 1;
 }
+int revNow(string str,int start,int end){
+    while(start<=end){
+        char temp=str[start];
+        str[start]=str[end];
+        str[end]=temp;
+        start++;
+        end--;
+    }
+}
+string revWordPoint(string str){
+    int start=0;
+    for(int i=0;i<=str.length();i++){
+        if(str[i]==' '|| i==str.length()){
+            int end=i-1;
+            while(start<=end){
+                char temp=str[start];
+                str[start]=str[end];
+                str[end]=temp;
+                start++;
+                end--;
+            }
+            start=i+1;
+        }
+    }
+    return str;
+}
+string StringRev(string str){
+    int start=0,end=str.length()-1;
+    while(start<=end){
+        char temp=str[start];
+        str[start]=str[end];
+        str[end]=temp;
+        start++;
+        end--;
+    }
+    return str;
+}
 int main(){
     int num1,num2;
     string str;
     getline(cin,str);
-    if(PalPhrase(str)){
-        cout<<"Yes";
-    }else{
-        cout<<"No";
-    }
+    cout<<revWordPoint(str);
+    // cout<<StringRev(str);
+    // if(PalPhrase(str)){
+    //     cout<<"Yes";
+    // }else{
+    //     cout<<"No";
+    // }
     // cout<<findLen(str);
     // cin>>num1>>num2;
     // cout<<factNormal(num1)<<" with pointer "<<factNormal(&num1);
