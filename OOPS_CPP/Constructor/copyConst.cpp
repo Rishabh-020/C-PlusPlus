@@ -22,3 +22,9 @@ public:
         cout<<endl<<"Destructed"<<endl;
     }
 };
+int main(){
+    Checking c1("abc",12,293.3);
+    Checking c2(c1);
+    c2.display();
+
+}
